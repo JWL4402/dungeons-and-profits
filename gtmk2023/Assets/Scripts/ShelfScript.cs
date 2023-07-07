@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShelfItemScript : MonoBehaviour
+public class ShelfScript : MonoBehaviour
 {
     public int items;
     [SerializeField]
@@ -16,6 +16,7 @@ public class ShelfItemScript : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             GameObject newItem = GameObject.Instantiate(template, Vector3.zero, Quaternion.identity, gameObject.transform);
+            newItem.GetComponent<ShelfSlotScript>().Item = null;
             displayed_items.Append(newItem);
             
             //GameObject newItem = new GameObject();
