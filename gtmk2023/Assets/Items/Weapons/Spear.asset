@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ab6971f7a6598541bff405f16673f3e, type: 3}
-  m_Name: Bow & Arrow
+  m_Name: Spear
   m_EditorClassIdentifier: 
-  name: Bow & Arrow
-  sprite: {fileID: 21300000, guid: b145668126f1395448b9961612e1da54, type: 3}
+  name: Spear
+  sprite: {fileID: 21300000, guid: 372b30f5bc9321f468b78d1586ce825b, type: 3}
   cost: 0
-  defaultPrice: 30
-  minPrice: 10
-  maxPrice: 80
-  damage: 14
+  defaultPrice: 0
+  minPrice: 0
+  maxPrice: 0
+  damage: 0

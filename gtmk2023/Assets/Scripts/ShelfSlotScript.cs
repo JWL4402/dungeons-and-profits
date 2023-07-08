@@ -9,6 +9,7 @@ public class ShelfSlotScript : MonoBehaviour
     [SerializeField] Image itemFrame;
     [SerializeField] TextMeshProUGUI itemName;
     [SerializeField] TextMeshProUGUI priceTag;
+    [SerializeField] TextMeshProUGUI costTag;
     [SerializeField] Slider priceSlider;
 
     [SerializeField] Item[] selection;
@@ -37,6 +38,7 @@ public class ShelfSlotScript : MonoBehaviour
                 priceSlider.onValueChanged.AddListener((price) => SetPrice((int)price));
                 itemFrame.sprite = selected_item.sprite;
                 itemName.text = selected_item.name;
+                costTag.text = "Costs " + selected_item.cost + "g";
                 priceSlider.minValue = selected_item.minPrice;
                 priceSlider.maxValue = selected_item.maxPrice;
                 price = selected_item.defaultPrice;
@@ -49,7 +51,7 @@ public class ShelfSlotScript : MonoBehaviour
                 priceSlider.value = price;
             }
 
-            priceTag.text = price.ToString() + '$';
+            priceTag.text = price.ToString() + 'g';
         }
     }
 
