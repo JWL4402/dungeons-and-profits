@@ -7,4 +7,7 @@ public class Item : ScriptableObject
 {
     new public string name = "New item";
     public Sprite sprite;
+    public int defaultPrice;
+    public int minPrice;
+    public int maxPrice;
 }

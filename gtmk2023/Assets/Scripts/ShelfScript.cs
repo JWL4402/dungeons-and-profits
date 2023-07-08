@@ -16,20 +16,8 @@ public class ShelfScript : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             GameObject newItem = GameObject.Instantiate(template, Vector3.zero, Quaternion.identity, gameObject.transform);
-            newItem.GetComponent<ShelfSlotScript>().Item = null;
+            newItem.GetComponent<ShelfSlotScript>().selected_item = null;
             displayed_items.Append(newItem);
-            
-            //GameObject newItem = new GameObject();
-            //items.Append(newItem);
-
-            //Image newImage = newItem.AddComponent<Image>();
-            //newImage.color = items[0].GetComponent<Image>().color;
-
-            //RectTransform newRect = newItem.GetComponent<RectTransform>();
-            //newRect.SetParent(gameObject.transform);
-            //newRect.transform.localScale = Vector3.one;
-
-            //newItem.SetActive(true);
         }
     }
 
