@@ -5,8 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New support", menuName = "Items/Support")]
 public class Support : Item
 {
-    public float speed;
-    public float defense;
-    public float bonus_damage;
-    public float spellEfficiency;
+    public int speed;
+    public int defense;
+    public int bonusDamage;
+    public int spellEfficiency;
+
+    public override void ApplyEffects(Party party, int amount)
+    {
+        party.speed += speed * amount;
+        party.defense += defense * amount;
+        party.bonusDamage += bonusDamage * amount;
+        party.spellEfficiency += spellEfficiency * amount;
+    }
 }

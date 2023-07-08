@@ -11,4 +11,9 @@ public class Item : ScriptableObject
     public int defaultPrice;
     public int minPrice;
     public int maxPrice;
+
+    virtual public void ApplyEffects(Party party, int amount)
+    {
+        return;
+    }
 }
