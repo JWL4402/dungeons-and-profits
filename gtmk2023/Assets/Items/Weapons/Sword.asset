@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sword
   sprite: {fileID: 21300000, guid: 45b1448bdb1781a4395b2f265b632086, type: 3}
+  defaultPrice: 20
+  minPrice: 10
+  maxPrice: 60
   damage: 10

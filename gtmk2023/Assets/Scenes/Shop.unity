@@ -192,7 +192,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -384,12 +384,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3312624480725136793, guid: 734ed96e3addfc94ebb8f6abe5ffdeaf, type: 3}
       propertyPath: selection.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3312624480725136793, guid: 734ed96e3addfc94ebb8f6abe5ffdeaf, type: 3}
       propertyPath: selection.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 98f4ecfcc2c9c17409f5d7a351ab0402, type: 2}
+      objectReference: {fileID: 11400000, guid: d9ae7574b0e98b4419be6122e5040445, type: 2}
+    - target: {fileID: 3312624480725136793, guid: 734ed96e3addfc94ebb8f6abe5ffdeaf, type: 3}
+      propertyPath: selection.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 069cf85e643382e418acc81c6dd01458, type: 2}
     - target: {fileID: 5436189935196894990, guid: 734ed96e3addfc94ebb8f6abe5ffdeaf, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1258,6 +1262,18 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3312624480725136793, guid: 734ed96e3addfc94ebb8f6abe5ffdeaf, type: 3}
+      propertyPath: selection.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312624480725136793, guid: 734ed96e3addfc94ebb8f6abe5ffdeaf, type: 3}
+      propertyPath: selection.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: aec7d23ccb6a2a44e825224e73054e73, type: 2}
+    - target: {fileID: 3312624480725136793, guid: 734ed96e3addfc94ebb8f6abe5ffdeaf, type: 3}
+      propertyPath: selection.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 19287b11b1cd136459a2205ca996f719, type: 2}
     - target: {fileID: 5436189935196894990, guid: 734ed96e3addfc94ebb8f6abe5ffdeaf, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

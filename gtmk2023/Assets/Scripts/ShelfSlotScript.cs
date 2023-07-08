@@ -13,24 +13,16 @@ public class ShelfSlotScript : MonoBehaviour
 
     [SerializeField] Item[] selection;
     public Item selected_item;
+    private Item last_item;
     int selection_index;
     int price;
-    //#nullable enable
-    //public Item? Item {
-    //    get { return item; }
-    //    set
-    //    {
-    //        item = value;
-    //        UpdateAttributes();
-    //    }
-    //}
-    //#nullable disable
+
     void Start()
     {
         if (selection.Length > 0)
         {
+            selection_index = selection.Length;
             selected_item = selection[0];
-            price = selected_item.defaultPrice;
         }
         UpdateAttributes();
     }
@@ -40,15 +32,24 @@ public class ShelfSlotScript : MonoBehaviour
     {
         if (selected_item != null)
         {
-            itemFrame.sprite = selected_item.sprite;
-            itemName.text = selected_item.name;
+            if (selected_item != last_item)
+            {
+                priceSlider.onValueChanged.AddListener((price) => SetPrice((int)price));
+                itemFrame.sprite = selected_item.sprite;
+                itemName.text = selected_item.name;
+                priceSlider.minValue = selected_item.minPrice;
+                priceSlider.maxValue = selected_item.maxPrice;
+                price = selected_item.defaultPrice;
+
+                last_item = selected_item;
+            }
+
+            if (price != priceSlider.value)
+            {
+                priceSlider.value = price;
+            }
+
             priceTag.text = price.ToString() + '$';
-            priceSlider.minValue = selected_item.minPrice;
-            priceSlider.maxValue = selected_item.maxPrice;
-            priceSlider.value = selected_item.defaultPrice;
-
-            priceSlider.onValueChanged.AddListener((price) => SetPrice((int) price));
-
         }
     }
 
@@ -60,7 +61,29 @@ public class ShelfSlotScript : MonoBehaviour
 
     public void AddPrice(int priceChange)
     {
-        price += priceChange;
+        int newPrice = price + priceChange;
+        if (newPrice > selected_item.maxPrice)
+        {
+            price = selected_item.maxPrice;
+        }
+        else if (newPrice < selected_item.minPrice)
+        {
+            price = selected_item.minPrice;
+        }
+        else
+        {
+            price += priceChange;
+        }
+        UpdateAttributes();
+    }
+
+    public void CycleItem(int change)
+    {
+        if (selection.Length <= 1) { return; }
+        
+        selection_index = selection.Length + ((selection_index + change) % selection.Length);
+
+        selected_item = selection[selection_index  % selection.Length];
         UpdateAttributes();
     }
 }

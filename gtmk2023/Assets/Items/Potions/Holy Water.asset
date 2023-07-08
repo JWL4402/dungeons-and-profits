@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab6971f7a6598541bff405f16673f3e, type: 3}
-  m_Name: Bow & Arrow
+  m_Script: {fileID: 11500000, guid: e9c54af954671ae4aa5e4292b8b70b40, type: 3}
+  m_Name: Holy Water
   m_EditorClassIdentifier: 
-  name: Bow & Arrow
-  sprite: {fileID: 21300000, guid: 41a0aa431d04efb48884b18f4470d46d, type: 3}
-  defaultPrice: 30
-  minPrice: 10
-  maxPrice: 80
-  damage: 14
+  name: Holy Water
+  sprite: {fileID: 21300000, guid: 5bc4332cd3d73684d9119a8d5aaf3526, type: 3}
+  cost: 0
+  defaultPrice: 0
+  minPrice: 0
+  maxPrice: 0
+  health: 0
