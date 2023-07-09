@@ -15,8 +15,8 @@ public class ShelfSlotScript : MonoBehaviour
     [SerializeField] Item[] selection;
     public Item selected_item;
     private Item last_item;
-    int selection_index;
-    int price;
+    private int selection_index;
+    public int price;
 
     void Start()
     {

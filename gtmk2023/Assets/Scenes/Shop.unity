@@ -1472,9 +1472,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1875326466}
-        m_TargetAssemblyTypeName: PartyScript, Assembly-CSharp
-        m_MethodName: a
+      - m_Target: {fileID: 1875326467}
+        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
+        m_MethodName: MoveToPurchasing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2094,8 +2094,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1875326465}
-  - component: {fileID: 1875326464}
   - component: {fileID: 1875326466}
+  - component: {fileID: 1875326467}
   m_Layer: 0
   m_Name: Logic Manager
   m_TagString: Untagged
@@ -2103,18 +2103,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1875326464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875326463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c3a5ebe11e4c8429b61fe658059bae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1875326465
 Transform:
   m_ObjectHideFlags: 0
@@ -2144,3 +2132,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   adventurers: {fileID: 11400000, guid: 3a91b04221362f843a7eeafdd00d4518, type: 2}
   monsters: {fileID: 11400000, guid: b7f2071dbc761e0468839f2d005620c5, type: 2}
+--- !u!114 &1875326467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875326463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74abf6d4d94d126429be405082e3b396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adventurers: {fileID: 0}
+  shopButton: {fileID: 0}
+  shopShelf: {fileID: 593864073}
