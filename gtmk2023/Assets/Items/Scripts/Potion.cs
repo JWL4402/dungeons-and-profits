@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New potion", menuName = "Items/Potion")]
 public class Potion : Item
 {
-    public float health;
+    public int health;
 }
