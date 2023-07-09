@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Knight's Shield
   sprite: {fileID: 21300000, guid: a88d834e4938bd24aa6442c304d5b698, type: 3}
-  cost: 0
-  defaultPrice: 0
-  minPrice: 0
-  maxPrice: 0
-  speed: 0
-  defense: 0
-  bonus_damage: 0
+  cost: 65
+  defaultPrice: 90
+  minPrice: 40
+  maxPrice: 130
+  speed: -3
+  defense: 24
+  bonusDamage: 0
   spellEfficiency: 0

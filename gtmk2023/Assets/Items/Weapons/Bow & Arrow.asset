@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Bow & Arrow
   sprite: {fileID: 21300000, guid: b145668126f1395448b9961612e1da54, type: 3}
-  cost: 0
-  defaultPrice: 30
-  minPrice: 10
-  maxPrice: 80
-  damage: 14
+  cost: 35
+  defaultPrice: 45
+  minPrice: 25
+  maxPrice: 70
+  damage: 12
+  speed: 8

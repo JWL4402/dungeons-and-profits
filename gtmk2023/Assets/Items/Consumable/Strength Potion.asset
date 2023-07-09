@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Strength Potion
   sprite: {fileID: 21300000, guid: c54013a79a543d64692d05f4ae647c73, type: 3}
-  cost: 0
-  defaultPrice: 0
-  minPrice: 0
-  maxPrice: 0
+  cost: 20
+  defaultPrice: 35
+  minPrice: 15
+  maxPrice: 40
   health: 0

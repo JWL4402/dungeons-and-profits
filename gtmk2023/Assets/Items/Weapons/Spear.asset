@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Spear
   sprite: {fileID: 21300000, guid: 372b30f5bc9321f468b78d1586ce825b, type: 3}
-  cost: 0
-  defaultPrice: 0
-  minPrice: 0
-  maxPrice: 0
-  damage: 5
-  speed: 5
+  cost: 60
+  defaultPrice: 80
+  minPrice: 50
+  maxPrice: 120
+  damage: 32
+  speed: 2

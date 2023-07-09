@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2e47089bc71fc4d8717cc7adbafcb6, type: 3}
   m_Name: Adventurers
   m_EditorClassIdentifier: 
-  gold: 40
-  health: 120
+  gold: 150
+  health: 140
   initMaxHealth: 140
   initDamage: 25
   initBonusDamage: 15
   initSpeed: 10
   initDefense: 10
   initSpellEfficiency: 0
-  damage: 8
-  speed: 5
-  defense: 5
-  maxHealth: 20
-  bonusDamage: 0
+  damage: 25
+  speed: 10
+  defense: 10
+  maxHealth: 140
+  bonusDamage: 15
   spellEfficiency: 0

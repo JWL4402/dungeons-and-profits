@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Buckler
   sprite: {fileID: 21300000, guid: 68619f347ca647d4ebb783540a23b43e, type: 3}
-  cost: 0
-  defaultPrice: 0
-  minPrice: 0
-  maxPrice: 0
+  cost: 35
+  defaultPrice: 50
+  minPrice: 25
+  maxPrice: 70
   speed: 0
-  defense: 0
-  bonus_damage: 0
+  defense: 8
+  bonusDamage: 0
   spellEfficiency: 0
