@@ -12,6 +12,7 @@ using System.Reflection;
 public class Party : ScriptableObject
 {
     public int gold;
+    private int startingGold = 150;
     public int health;
 
     public int initMaxHealth;
@@ -33,6 +34,8 @@ public class Party : ScriptableObject
     public void Init()
     {
         inventory = new Dictionary<Item, int>();
+
+        gold = startingGold;
 
         InitializeStats();
     }
