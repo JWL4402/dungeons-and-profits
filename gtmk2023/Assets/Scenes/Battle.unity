@@ -208,10 +208,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 72
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -566,3 +566,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0657c154a5f2a4cb12dbef99db2042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adventurers: {fileID: 11400000, guid: 3a91b04221362f843a7eeafdd00d4518, type: 2}
+  monsters: {fileID: 11400000, guid: b7f2071dbc761e0468839f2d005620c5, type: 2}
+  holy_water: {fileID: 11400000, guid: 069cf85e643382e418acc81c6dd01458, type: 2}
+  healing_potion: {fileID: 11400000, guid: d9ae7574b0e98b4419be6122e5040445, type: 2}
+  dialogue: {fileID: 36796950}

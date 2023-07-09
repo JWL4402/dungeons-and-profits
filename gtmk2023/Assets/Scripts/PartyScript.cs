@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PartyScript : MonoBehaviour
 {
-    public Party party;
+    public Party adventurers;
+    public Party monsters;
     // Start is called before the first frame update
     void Start()
     {
-        party.Init();
+        adventurers.Init();
+        monsters.Init();
     }
 
-    // Update is called once per frame
-    void Update()
+    [ContextMenu("a")]
+    public void a()
     {
-        
+        SceneManager.LoadScene("Battle");
+
     }
 }

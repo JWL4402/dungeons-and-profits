@@ -28,6 +28,7 @@ public class Party : ScriptableObject
 
     public void Init()
     {
+        Debug.Log("Awake");
         inventory = new Dictionary<Item, int>();
 
         InitializeStats();
@@ -69,6 +70,7 @@ public class Party : ScriptableObject
         speed = initSpeed;
         defense = initDefense;
         maxHealth = initMaxHealth;
+        health = maxHealth;
         bonusDamage = initBonusDamage;
         spellEfficiency = initSpellEfficiency;
     }
@@ -80,8 +82,6 @@ public class Party : ScriptableObject
         foreach (var (item, amount) in inventory)
         {
             item.ApplyEffects(this, amount);
-            Debug.Log(damage);
-            Debug.Log(speed);
         }
     }
 }
