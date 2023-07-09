@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Health Potion
   sprite: {fileID: 21300000, guid: 3b99bae890ea92d488e3f4a7bbe2160a, type: 3}
-  cost: 8
-  defaultPrice: 10
-  minPrice: 5
+  cost: 12
+  defaultPrice: 15
+  minPrice: 10
   maxPrice: 25
-  health: 5
+  health: 20

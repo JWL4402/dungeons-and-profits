@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BattleScript : MonoBehaviour
@@ -18,10 +19,13 @@ public class BattleScript : MonoBehaviour
     void Start()
     {
         dialogue.text = "The adventure begins.\n";
+
+        monsters.InitializeStats();
+        monsters.health = monsters.maxHealth;
         Expedition(2);
     }
 
-    void Attack(Party attacker, Party target)
+    private void Attack(Party attacker, Party target)
     {
         int damage = Mathf.CeilToInt(Random.Range(attacker.damage * 0.85f, attacker.damage * 1.15f));
         damage -= target.defense;
@@ -63,6 +67,11 @@ public class BattleScript : MonoBehaviour
             Attack(order[0], order[1]);
             order.Reverse();
         }
+
+        if (adventurers.health <= 0)
+        {
+            //SceneManager.LoadScene("Title");
+        }
     }
 
     void Expedition(int numBattles)
@@ -89,6 +98,18 @@ public class BattleScript : MonoBehaviour
                 adventurers.inventory[healing_potion]--;
             }
             Battle();
+            monsters.Strengthen(1.04f);
+            adventurers.gold += Mathf.CeilToInt(10 * Random.Range(monsters.scale * 0.8f, monsters.scale * 1.2f));
         }
+        monsters.Strengthen(1.10f);
+    }
+
+    public void ReturnToShop()
+    {
+        if (adventurers.health <= 0) {
+            SceneManager.LoadScene("Title");
+            return;
+        }
+        SceneManager.LoadScene("Shop");
     }
 }

@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 using System.Reflection;
+using UnityEngine.UIElements;
 
 [CreateAssetMenu(fileName = "Party", menuName = "Items/Party")]
 public class Party : ScriptableObject
@@ -28,6 +28,13 @@ public class Party : ScriptableObject
     public int maxHealth;
     public int bonusDamage;
     public int spellEfficiency;
+
+    public float scale = 1f;
+    public void Strengthen(float factor)
+    {
+        //const float factor = 1.13f;
+        scale *= factor;
+    }
 
     public Dictionary<Item, int> inventory;
 
@@ -90,15 +97,15 @@ public class Party : ScriptableObject
         // THIS IS CRAZY BRO
     }
 
-    private void InitializeStats()
+    public void InitializeStats()
     {
-        damage = initDamage;
-        speed = initSpeed;
-        defense = initDefense;
-        maxHealth = initMaxHealth;
-        health = maxHealth;
-        bonusDamage = initBonusDamage;
-        spellEfficiency = initSpellEfficiency;
+        damage = Mathf.RoundToInt(initDamage * scale);
+        speed = Mathf.RoundToInt(initSpeed * scale);
+        defense = Mathf.RoundToInt(initDefense * scale);
+        maxHealth = Mathf.RoundToInt(initMaxHealth * scale);
+        health = Mathf.RoundToInt(maxHealth * scale);
+        bonusDamage = Mathf.RoundToInt(initBonusDamage * scale);
+        spellEfficiency = Mathf.RoundToInt(initSpellEfficiency * scale);
     }
 
     public void UpdateStats()

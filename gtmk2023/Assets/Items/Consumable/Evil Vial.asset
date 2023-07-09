@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Evil Vial
   sprite: {fileID: 21300000, guid: 6b9e868de92bebb4992c320baf627cad, type: 3}
-  cost: 0
-  defaultPrice: 0
-  minPrice: 0
-  maxPrice: 0
+  cost: 40
+  defaultPrice: 60
+  minPrice: 30
+  maxPrice: 80
   health: 0

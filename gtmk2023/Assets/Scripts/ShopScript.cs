@@ -4,18 +4,32 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ShopScript : MonoBehaviour
 {
     public Party adventurers;
 
+    public TextMeshProUGUI goldCount;
+    public TextMeshProUGUI goldAdventurers;
+    public Balance balance;
+
     public GameObject shopShelf;
     public GameObject purchase;
+
+    public GameObject shopBtn;
+    public GameObject battleBtn;
+
     public TextMeshProUGUI purchaseLog;
     public Dictionary<Item, int> displayedItems;
 
     public Item[] items;
+
+    public void MoveToBattle()
+    {
+        SceneManager.LoadScene("Battle");
+    }
 
     public void MoveToPurchasing()
     {
@@ -30,12 +44,16 @@ public class ShopScript : MonoBehaviour
             {
                 displayedItems.Add(slot.selected_item, slot.price);
             }
-            Debug.Log(slot.selected_item);
-            Debug.Log(slot.price);
+            //Debug.Log(slot.selected_item);
+            //Debug.Log(slot.price);
         }
 
         shopShelf.SetActive(false);
         purchase.SetActive(true);
+
+        shopBtn.SetActive(false);
+        battleBtn.SetActive(true);
+
         PurchaseItems();
     }
 
@@ -49,6 +67,7 @@ public class ShopScript : MonoBehaviour
                 adventurers.inventory[item as Item]++;
             }
             adventurers.gold -= displayedItems[item as Item];
+            balance.gold += displayedItems[item as Item] - (item as Item).cost;
             purchaseLog.text += "Adventurers bought " + (item as Item).name + " for " + displayedItems[item as Item] + " gold.\n";
             
             return true;
@@ -88,31 +107,39 @@ public class ShopScript : MonoBehaviour
             weights.Remove(category);
         }
 
-        //int potions = adventurers.GetItemsOfType<Potion>().Values.Sum();
+        int potions = adventurers.GetItemsOfType<Potion>().Values.Sum();
+        Debug.Log(potions);
 
-        //while (potions < 10)
-        //{
-        //    if (!PurchaseItemOfType<Potion>())
-        //    {
-        //        break;
-        //    }
-        //}
+        while (potions < 10)
+        {
+            if (!PurchaseItemOfType<Potion>())
+            {
+                break;
+            }
+            potions = adventurers.GetItemsOfType<Potion>().Values.Sum();
+        }
 
         //PurchaseItemOfType<Consumable>();
         //PurchaseItemOfType<Spell>();
 
         //Dictionary<Weapon, int> invWeapons = adventurers.GetItemsOfType<Weapon>();
         //Dictionary<Consumable, int> invConsumables = adventurers.GetItemsOfType<Consumable>();
-        
+
+        foreach( var (item, amount) in adventurers.inventory)
+        {
+            Debug.Log(item.name + amount.ToString());
+        }
+
     }
 
     public void Start()
     {
-        adventurers.Init();
-        foreach (Item item in items)
-        {
-            Debug.Log(item);
-            adventurers.inventory.Add(item, 2);
-        }
+        adventurers.UpdateStats();
+    }
+
+    private void Update()
+    {
+        goldCount.text = "Gold : " + balance.gold + "au";
+        goldAdventurers.text = "Adventurers gold: " + adventurers.gold + "au";
     }
 }

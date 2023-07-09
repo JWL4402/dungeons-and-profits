@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2e47089bc71fc4d8717cc7adbafcb6, type: 3}
   m_Name: Adventurers
   m_EditorClassIdentifier: 
-  gold: 120
+  gold: 150
   health: 140
   initMaxHealth: 140
   initDamage: 25
